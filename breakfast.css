@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  background-color: rgb(243 242 228);
+}
+
+h1 {
+  margin: 20px 0;
+  font-size: 2.5rem;
+  color: #444;
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 20px 0;
+  background-color: rgb(243 242 228);
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(243 242 228);
+  width: 95%;
+  margin: 0 auto;
+  gap: 16px;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  flex: 1 1 calc(25% - 16px);
+  height: 70vh;
+  max-width: calc(25% - 16px);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card .box-image {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+
+.box-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.box-image img:hover {
+  transform: scale(1.1);
+}
+
+.card .box-text {
+  padding: 15px;
+}
+
+.box-text .name {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.box-text .description {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 480px) {
+  .card{
+    flex: 1 1 calc(50% - 16px);
+    max-width: 50%;
+    height: auto;
+  }
+  .card .box-image{
+    
+      /* height: 40%;  */
+  }
+
+  .card .box-text{
+
+  }
+  .card .box-image{
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: auto;
+  }
+}
